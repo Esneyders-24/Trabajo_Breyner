@@ -1,10 +1,22 @@
-/* LOGO */
+/* === Ajustes para evitar footer flotando === */
+html,
+body {
+  height: 100%;
+  
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* === LOGO === */
 .imag-3 {
   height: 100px;
   width: 100px;
 }
 
-/* RESETEO */
+/* === RESETEO === */
 * {
   margin: 0;
   padding: 0;
@@ -12,38 +24,32 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* FONDO DEL BODY */
 body {
-  background: rgb(255, 255, 255);
-  margin: 0;
-  padding: 0;
+  background: white;
 }
 
-/* NAVBAR */
+/* === NAVBAR === */
 nav {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   background: black;
-  /* no afecta al carrusel */
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* LOGO A LA IZQUIERDA */
 nav a:first-child {
   margin-right: auto;
 }
 
-/* LINKS DEL NAV */
 nav a {
-  position: relative;
   font-size: 1.1em;
   color: white;
   text-decoration: none;
   padding: 6px 20px;
   transition: .5s;
+  position: relative;
 }
 
 nav a:hover {
@@ -69,34 +75,26 @@ nav a:hover span {
   opacity: 1;
 }
 
+/* CARRUSEL */
 .carousel-item img {
-  max-width: 1500;
-  height: 1100;
+  height: 1100px;
   object-fit: cover;
+  width: 100%;
 }
 
-
+/* CONTENEDORES DE INFO */
 .container-info {
   display: flex;
   align-items: center;
-  /* Centra el texto VERTICALMENTE */
   justify-content: center;
   gap: 40px;
-  /* Espacio entre imagen y texto */
   padding: 40px;
 }
 
 .img-left {
   width: 350px;
-  /* Ajusta el tamaño que quieras */
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.text-content {
-  max-width: 500px;
-  text-align: center;
-  /* Centra el texto */
+  transition: 0.3s;
 }
 
 .img-left:hover {
@@ -104,14 +102,20 @@ nav a:hover span {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-hr {
-  border: 0;
-  height: 4px;
-  background-color: #333;
-  width: 500px;
-  margin: 20px auto;
+.text-content {
+  max-width: 500px;
+  text-align: center;
 }
 
+hr {
+  height: 4px;
+  background: #333;
+  width: 500px;
+  margin: 20px auto;
+  border: none;
+}
+
+/* VISIÓN Y MISIÓN */
 .row-section {
   display: flex;
   align-items: center;
@@ -122,17 +126,10 @@ hr {
 
 .reverse {
   flex-direction: row-reverse;
-  /* Invierte la fila */
 }
 
 .text-box {
   max-width: 500px;
-  text-align: left;
-  /* Alineado normal */
-}
-
-.text-box h2 {
-  margin-bottom: 15px;
 }
 
 .img-box {
@@ -140,6 +137,7 @@ hr {
   border-radius: 10px;
 }
 
+/* TEXTO GENERAL */
 h1 {
   text-align: center;
   color: #333;
@@ -149,7 +147,6 @@ p {
   font-size: 18px;
   line-height: 1.6;
   color: #555;
-  text-align: justify;
 }
 
 .highlight {
@@ -157,12 +154,108 @@ p {
   color: #000;
 }
 
+/* IMÁGENES CENTRADAS */
 .image-containersi {
-   text-align: center;
-    margin-top: 20px; 
+  text-align: center;
+  margin-top: 20px;
 }
-.image-containersi img{
-  max-width: 100%;    /* Se adapta al tamaño del contenedor */
-    height: auto;       /* Mantiene proporción */
-    border-radius: 10px; /* Opcional: bordes redondeados */
+
+.image-containersi img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* === FOOTER FINAL === */
+.mi-footer {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  /* Mantiene el footer abajo */
+}
+
+.nosotros-section {
+  padding: 60px 20px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.nosotros-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.nosotros-text {
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+
+  /* Secciones en columna */
+  .container-info,
+  .row-section,
+  .reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-content,
+  .text-box {
+    text-align: center;
+  }
+
+  .img-left,
+  .img-box {
+    width: 80%;
+  }
+
+  .card {
+    width: 95% !important;
+  }
+
+  .carousel-item img {
+    height: 250px;
+  }
+}
+
+/* Ajuste responsive de imágenes grandes */
+@media (max-width: 768px) {
+
+  .carousel-item img {
+    height: 250px;        /* Más pequeño */
+  }
+
+  .img-left,
+  .img-box {
+    width: 100%;          /* Antes 350px → causa overflow */
+    max-width: 300px;     /* límite sensible */
+  }
+
+  .container-info,
+  .row-section,
+  .reverse {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .text-content,
+  .text-box {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  hr {
+    width: 80%;           /* Antes 500px */
+  }
+
+  .card {
+    width: 100% !important;
+  }
 }
