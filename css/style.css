@@ -1,0 +1,168 @@
+/* LOGO */
+.imag-3 {
+  height: 100px;
+  width: 100px;
+}
+
+/* RESETEO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* FONDO DEL BODY */
+body {
+  background: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: black;
+  /* no afecta al carrusel */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* LOGO A LA IZQUIERDA */
+nav a:first-child {
+  margin-right: auto;
+}
+
+/* LINKS DEL NAV */
+nav a {
+  position: relative;
+  font-size: 1.1em;
+  color: white;
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: .5s;
+}
+
+nav a:hover {
+  color: #0ef;
+}
+
+nav a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #0ef;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: .5s;
+}
+
+nav a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.carousel-item img {
+  max-width: 1500;
+  height: 1100;
+  object-fit: cover;
+}
+
+
+.container-info {
+  display: flex;
+  align-items: center;
+  /* Centra el texto VERTICALMENTE */
+  justify-content: center;
+  gap: 40px;
+  /* Espacio entre imagen y texto */
+  padding: 40px;
+}
+
+.img-left {
+  width: 350px;
+  /* Ajusta el tamaño que quieras */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-content {
+  max-width: 500px;
+  text-align: center;
+  /* Centra el texto */
+}
+
+.img-left:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  border: 0;
+  height: 4px;
+  background-color: #333;
+  width: 500px;
+  margin: 20px auto;
+}
+
+.row-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  gap: 40px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  /* Invierte la fila */
+}
+
+.text-box {
+  max-width: 500px;
+  text-align: left;
+  /* Alineado normal */
+}
+
+.text-box h2 {
+  margin-bottom: 15px;
+}
+
+.img-box {
+  width: 350px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  text-align: justify;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #000;
+}
+
+.image-containersi {
+   text-align: center;
+    margin-top: 20px; 
+}
+.image-containersi img{
+  max-width: 100%;    /* Se adapta al tamaño del contenedor */
+    height: auto;       /* Mantiene proporción */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+}
