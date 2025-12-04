@@ -197,7 +197,6 @@ p {
 
 @media (max-width: 768px) {
 
-  /* Secciones en columna */
   .container-info,
   .row-section,
   .reverse {
@@ -224,17 +223,16 @@ p {
   }
 }
 
-/* Ajuste responsive de imágenes grandes */
 @media (max-width: 768px) {
 
   .carousel-item img {
-    height: 250px;        /* Más pequeño */
+    height: 250px;        
   }
 
   .img-left,
   .img-box {
-    width: 100%;          /* Antes 350px → causa overflow */
-    max-width: 300px;     /* límite sensible */
+    width: 100%;          
+    max-width: 300px;     
   }
 
   .container-info,
@@ -271,4 +269,17 @@ p {
 .img-nosotros:hover{
     box-shadow: 0 0 20px 5px rgba(0,0,0,0.3);
     transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+
+  .img-nosotros {
+    width: 150px;
+    left: 0;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    max-width: 100%;
+  }
+
 }
